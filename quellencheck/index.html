@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Quellencheck Geschichte</title>
+<meta name="color-scheme" content="light">
+<style>
+:root{
+  --paper:#f6efe2; --paper2:#efe4cf; --ink:#2b2118; --muted:#6f5f4c;
+  --accent:#9b2c1f; --accent2:#c9a24a; --ok:#2f7a45; --bad:#a3352a;
+  --card:#fffaf0; --line:#d8c7a6;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:Georgia,"Times New Roman",serif;font-size:17px;line-height:1.45;
+  background-image:radial-gradient(circle at 20% 10%,rgba(255,255,255,.6),transparent 40%),radial-gradient(circle at 80% 90%,rgba(201,162,74,.12),transparent 50%);min-height:100vh}
+.wrap{max-width:560px;margin:0 auto;padding:16px 16px 40px}
+header.top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:13px;color:var(--muted);letter-spacing:.04em;text-transform:uppercase}
+.bar{height:6px;background:var(--paper2);border-radius:3px;overflow:hidden;flex:1;margin-left:10px}
+.bar i{display:block;height:100%;background:var(--accent);width:0;transition:width .4s}
+h1{font-size:30px;line-height:1.15;margin:8px 0 6px}
+h2{font-size:21px;line-height:1.25;margin:16px 0 10px}
+p{margin:0 0 12px}
+.stamp{display:inline-block;border:2px solid var(--accent);color:var(--accent);font-family:system-ui,sans-serif;font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px;border-radius:4px;transform:rotate(-3deg)}
+.doc{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:16px 16px 14px;box-shadow:0 2px 0 var(--line),0 8px 20px rgba(60,40,10,.08);position:relative;margin:10px 0 14px}
+.doc:before{content:"";position:absolute;top:-9px;left:50%;width:70px;height:18px;margin-left:-35px;background:rgba(201,162,74,.45);transform:rotate(-2deg)}
+.doc .kind{font-family:system-ui,sans-serif;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.doc blockquote{margin:0;font-size:19px;font-style:italic}
+.doc .who{margin-top:10px;font-family:system-ui,sans-serif;font-size:13px;color:var(--muted)}
+.poster{background:#1c1c1c;color:#f3e7c9;text-align:center;padding:22px 12px;border-radius:4px;font-family:Impact,"Arial Black",system-ui,sans-serif;letter-spacing:.04em}
+.poster b{display:block;font-size:26px;line-height:1.15;color:#e9c46a}
+.poster small{display:block;margin-top:8px;font-family:system-ui,sans-serif;font-size:12px;color:#bbb;letter-spacing:0}
+.photo{aspect-ratio:4/3;border:10px solid #fff;border-bottom-width:34px;background:linear-gradient(160deg,#8d8070,#4a4036);box-shadow:0 4px 12px rgba(0,0,0,.25);position:relative;transform:rotate(-1.5deg);display:flex;align-items:center;justify-content:center;color:#efe6d6;font-family:system-ui,sans-serif;font-size:14px;text-align:center;padding:12px}
+.photo span{position:absolute;bottom:-28px;left:0;right:0;color:#333;font-family:"Comic Sans MS","Segoe Print",cursive;font-size:14px}
+.q{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-weight:700;font-size:18px;margin:6px 0 12px}
+.answers{display:grid;gap:10px}
+button{font:inherit;cursor:pointer}
+.ans{width:100%;text-align:left;background:#fff;border:2px solid var(--line);border-radius:10px;padding:13px 14px;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;color:var(--ink);transition:transform .1s,border-color .2s,background .2s}
+.ans:active{transform:scale(.98)}
+.ans.right{border-color:var(--ok);background:#e6f3e9}
+.ans.wrong{border-color:var(--bad);background:#f8e3df}
+.ans[disabled]{cursor:default}
+.ans.dim{opacity:.55}
+.fb{margin-top:14px;border-left:5px solid var(--ok);background:#fff;border-radius:6px;padding:12px 14px;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:15.5px;animation:pop .3s ease}
+.fb.no{border-left-color:var(--bad)}
+.fb strong.t{display:block;font-size:17px;margin-bottom:4px}
+.skill{margin-top:10px;font-size:13.5px;background:var(--paper2);border-radius:6px;padding:8px 10px;color:#4a3b2a}
+.skill b{color:var(--accent)}
+.btn{display:block;width:100%;margin-top:16px;background:var(--accent);color:#fff;border:0;border-radius:10px;padding:15px;font-family:system-ui,sans-serif;font-weight:700;font-size:17px;box-shadow:0 3px 0 #6d1d14}
+.btn:active{transform:translateY(2px);box-shadow:0 1px 0 #6d1d14}
+.btn.ghost{background:transparent;color:var(--accent);border:2px solid var(--accent);box-shadow:none}
+.hide{display:none}
+@keyframes pop{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.score{font-size:54px;font-weight:700;color:var(--accent);line-height:1;margin:6px 0}
+.badge{font-family:system-ui,sans-serif;font-weight:700;font-size:20px;margin-bottom:12px}
+.grid{display:grid;gap:10px;margin:12px 0}
+.tile{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-family:system-ui,sans-serif;font-size:15px}
+.tile h3{margin:0 0 4px;font-size:16px;color:var(--accent)}
+.tile ul{margin:6px 0 0;padding-left:18px}
+.small{font-family:system-ui,sans-serif;font-size:13px;color:var(--muted)}
+.intro li{margin-bottom:6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- Start -->
+  <section id="start">
+    <span class="stamp">Geschichte · Oberstufe</span>
+    <h1>Quellencheck</h1>
+    <p>Historiker glauben nichts einfach so. Sie fragen: <b>Wer sagt das? Wann? Und warum?</b></p>
+    <div class="doc intro">
+      <div class="kind">Dein Auftrag</div>
+      <ul style="margin:0;padding-left:20px">
+        <li>8 Quellen, je eine Frage</li>
+        <li>Dauert ungefähr 4 Minuten</li>
+        <li>Nach jeder Antwort erfährst du, was dahintersteckt und was du davon in der Oberstufe lernst.</li>
+      </ul>
+    </div>
+    <button class="btn" id="go">Los geht's</button>
+    <p class="small" style="margin-top:14px">Es werden keine Daten gespeichert oder verschickt.</p>
+  </section>
+
+  <!-- Quiz -->
+  <section id="quiz" class="hide">
+    <header class="top"><span id="count">Quelle 1 / 8</span><div class="bar"><i id="prog"></i></div></header>
+    <div id="card"></div>
+  </section>
+
+  <!-- Ende -->
+  <section id="end" class="hide">
+    <span class="stamp">Auswertung</span>
+    <div class="score" id="score"></div>
+    <div class="badge" id="badge"></div>
+    <p id="badgeText"></p>
+
+    <h2>Geschichte in der Oberstufe</h2>
+    <div class="grid">
+      <div class="tile">
+        <h3>Einführungsphase (EF)</h3>
+        Wie kämpfen Menschen um Mitsprache und Freiheit?
+        <ul>
+          <li>Demokratie im antiken Athen</li>
+          <li>Unabhängigkeit der USA und Kampf gegen die Sklaverei</li>
+          <li>Französische Revolution und Revolution 1848/49</li>
+          <li>China und Russland im 20. Jahrhundert</li>
+        </ul>
+      </div>
+      <div class="tile">
+        <h3>Qualifikationsphase (Q1 und Q2)</h3>
+        Wie ist unsere Gegenwart entstanden?
+        <ul>
+          <li>Moderne und Erster Weltkrieg</li>
+          <li>Nationalsozialismus und Zweiter Weltkrieg</li>
+          <li>Kalter Krieg und geteiltes Deutschland</li>
+          <li>Friedliche Revolution 1989 und die Welt danach</li>
+        </ul>
+      </div>
+      <div class="tile">
+        <h3>Wähle deinen Weg</h3>
+        <ul>
+          <li><b>Grundkurs:</b> 3 Stunden pro Woche, auch als Abiturfach möglich</li>
+          <li><b>Leistungskurs:</b> 5 Stunden pro Woche, mehr Tiefe und eigene Recherche</li>
+          <li><b>Zusatzkurs:</b> in der Q2, wenn du Geschichte nicht als Grund- oder Leistungskurs weiterführst</li>
+        </ul>
+      </div>
+      <div class="tile">
+        <h3>Was du mitnimmst</h3>
+        Fake News und Propaganda durchschauen, gut argumentieren, Texte kritisch lesen, eine Facharbeit schreiben. Das brauchst du in Jura, Journalismus, Politik, Lehramt und überall, wo man mit Informationen arbeitet.
+      </div>
+    </div>
+    <p style="font-family:system-ui,sans-serif"><b>Fragen?</b> Sprich uns hier im Raum an und schau dir die echten Objekte auf dem Tisch an!</p>
+    <button class="btn ghost" id="again">Nochmal spielen</button>
+  </section>
+
+</div>
+
+<script>
+const Q = [
+  {
+    src: `<div class="kind">Foto</div>
+      <div class="photo">[Foto]<br>Menschenmenge stürmt eine Festung<span>„Sturm auf die Bastille, Paris, 14. Juli 1789"</span></div>`,
+    q: "Jemand postet dieses Foto. Kann das echt sein?",
+    a: ["Ja, es zeigt die Französische Revolution.", "Nein, 1789 gab es noch keine Fotografie.", "Nur, wenn es schwarz-weiß ist."],
+    r: 1,
+    fb: "Das älteste erhaltene Foto stammt von etwa 1826/27. Vom Sturm auf die Bastille gibt es nur Gemälde und Zeichnungen. Ein „Foto“ davon ist also nachgestellt, aus einem Film oder von einer KI erzeugt.",
+    skill: "Die Französische Revolution ist Thema in der <b>EF</b>. Dabei lernst du, Bilder als Quellen zu prüfen."
+  },
+  {
+    src: `<div class="kind">Zitat aus dem Internet</div>
+      <blockquote>„Die Definition von Wahnsinn ist, immer wieder das Gleiche zu tun und andere Ergebnisse zu erwarten."</blockquote>
+      <div class="who">angeblich: Albert Einstein</div>`,
+    q: "Hat Einstein das wirklich gesagt?",
+    a: ["Ja, das ist sein berühmtestes Zitat.", "Es gibt keinen Beleg dafür, dass Einstein das gesagt hat.", "Ja, es steht ja überall im Internet."],
+    r: 1,
+    fb: "Forscher haben in Einsteins Schriften nichts Entsprechendes gefunden. Der Satz taucht erst Jahrzehnte nach seinem Tod (1955) auf. Ein berühmter Name macht ein Zitat glaubwürdiger, deshalb werden solche Sätze gern großen Namen „untergeschoben“.",
+    skill: "<b>Oberstufen-Werkzeug:</b> Du fragst immer nach der Herkunft einer Quelle. Das hilft dir auch gegen Fake News."
+  },
+  {
+    src: `<div class="kind">Drei Dinge über den Ersten Weltkrieg</div>
+      <p style="margin:0;font-family:system-ui,sans-serif;font-size:16px">A) Tagebuch eines Soldaten, geschrieben 1916 an der Front<br>B) Schulbuchkapitel aus dem Jahr 2020<br>C) Kinofilm über den Krieg aus dem Jahr 2022</p>`,
+    q: "Was davon ist eine historische Quelle?",
+    a: ["Nur A, das Tagebuch", "A und B", "Alle drei"],
+    r: 0,
+    fb: "Eine <b>Quelle</b> stammt aus der Zeit selbst, wie das Tagebuch von 1916. Schulbuch und Film sind <b>Darstellungen</b>: Menschen von heute erzählen über die Vergangenheit, und jede Darstellung ist eine Deutung.",
+    skill: "In der Oberstufe vergleichst du Quellen und Darstellungen und prüfst, wie Geschichte erzählt wird."
+  },
+  {
+    src: `<div class="kind">Rede, Athen, 431 v. Chr.</div>
+      <blockquote>„Der Name unserer Verfassung ist Demokratie, weil der Staat nicht auf wenige, sondern auf die Mehrheit ausgerichtet ist."</blockquote>
+      <div class="who">Perikles, überliefert vom Geschichtsschreiber Thukydides</div>`,
+    q: "Wer durfte in Athen in der Volksversammlung abstimmen?",
+    a: ["Alle Menschen, die in Athen lebten", "Nur erwachsene männliche Bürger Athens", "Männer und Frauen ab 18"],
+    r: 1,
+    fb: "Frauen, Sklaven und Zugezogene durften nicht mitbestimmen. Die „Mehrheit“ war also nur ein kleiner Teil der Bevölkerung. Übrigens hat Thukydides die Rede nachträglich aufgeschrieben. Ob Perikles genau so gesprochen hat, wissen wir nicht.",
+    skill: "Die attische Demokratie ist Thema in der <b>EF</b>. Du vergleichst dabei Anspruch und Wirklichkeit."
+  },
+  {
+    src: `<div class="kind">Unabhängigkeitserklärung der USA, 1776</div>
+      <blockquote>„Wir halten diese Wahrheiten für selbstverständlich: dass alle Menschen gleich geschaffen sind …"</blockquote>
+      <div class="who">Hauptautor: Thomas Jefferson</div>`,
+    q: "Was fällt auf, wenn man weiß, dass Jefferson Sklaven besaß?",
+    a: ["Nichts, „alle Menschen“ schloss Sklaven mit ein.", "Es gibt einen Widerspruch zwischen dem Ideal und der Wirklichkeit.", "Jefferson hat den Satz nicht ernst gemeint, also ist er unwichtig."],
+    r: 1,
+    fb: "Die Sklaverei bestand in den USA noch fast 90 Jahre weiter und wurde erst 1865 abgeschafft. Gegner der Sklaverei haben sich später genau auf diesen Satz berufen. Ein Ideal kann also auch dann etwas bewirken, wenn seine Verfasser es selbst nicht einlösen.",
+    skill: "Die Entstehung der USA und der Kampf gegen die Sklaverei sind Thema in der <b>EF</b>."
+  },
+  {
+    src: `<div class="kind">Plakat, Deutschland 1938</div>
+      <div class="poster"><b>EIN VOLK<br>EIN REICH<br>EIN FÜHRER</b><small>NS-Propagandaparole zum „Anschluss“ Österreichs</small></div>`,
+    q: "Wozu diente so ein Plakat?",
+    a: ["Es sollte neutral informieren.", "Es sollte Gefühle wecken und Zustimmung zum NS-Staat erzeugen.", "Es war ein Kunstwerk ohne politischen Zweck."],
+    r: 1,
+    fb: "Propaganda will nicht informieren, sondern überzeugen. Kurze Parolen, Wiederholung und ein Wir-Gefühl sollten die Menschen hinter Hitler vereinen. Wer nicht dazugehören sollte, wurde ausgegrenzt und verfolgt.",
+    skill: "Nationalsozialismus und Zweiter Weltkrieg sind Thema in der <b>Q-Phase</b>. Du lernst, wie Propaganda funktioniert, damals wie heute."
+  },
+  {
+    src: `<div class="kind">Pressekonferenz, Ost-Berlin, 15. Juni 1961</div>
+      <blockquote>„Niemand hat die Absicht, eine Mauer zu errichten!"</blockquote>
+      <div class="who">Walter Ulbricht, Staats- und Parteichef der DDR</div>`,
+    q: "Zwei Monate später, am 13. August 1961, begann der Mauerbau. Was lernen wir daraus?",
+    a: ["Ulbricht wusste von nichts.", "Aussagen von Politikern muss man mit anderen Quellen und Fakten vergleichen.", "Die Quelle ist falsch und deshalb wertlos."],
+    r: 1,
+    fb: "Auch eine „falsche“ Aussage ist eine wertvolle Quelle: Sie zeigt, was die DDR-Führung die Öffentlichkeit glauben lassen wollte. Ob Ulbricht damals schon fest plante, ist umstritten. Genau darüber diskutieren Historiker.",
+    skill: "Das geteilte Deutschland ist Thema in der <b>Q-Phase</b>."
+  },
+  {
+    src: `<div class="kind">Live-Pressekonferenz, Ost-Berlin, 9. November 1989</div>
+      <blockquote>„Das tritt nach meiner Kenntnis … ist das sofort, unverzüglich."</blockquote>
+      <div class="who">Günter Schabowski (SED) auf die Frage, ab wann die neue Reiseregelung gilt</div>`,
+    q: "Was passierte noch in derselben Nacht?",
+    a: ["Nichts, die Regelung galt erst später.", "Tausende zogen zu den Grenzübergängen, und die Mauer wurde geöffnet.", "Die DDR schloss alle Grenzen."],
+    r: 1,
+    fb: "Eigentlich sollte die Regelung erst am nächsten Tag gelten. Doch die Menschen hatten im Fernsehen „sofort“ gehört. Der Druck an der Bornholmer Straße wurde so groß, dass die Grenze geöffnet wurde. Ein Versprecher, aber vor allem der Mut vieler Menschen in der Friedlichen Revolution.",
+    skill: "Die Friedliche Revolution 1989 ist Thema in der <b>Q-Phase</b>. Du fragst dabei: Zufall oder Ergebnis einer langen Entwicklung?"
+  }
+];
+
+let i = 0, points = 0;
+const $ = id => document.getElementById(id);
+
+function reset(){ i = 0; points = 0; Q.forEach(d => delete d.order); }
+function show(id){ ["start","quiz","end"].forEach(s => $(s).classList.toggle("hide", s !== id)); window.scrollTo(0,0); }
+
+function render(){
+  const d = Q[i];
+  // Antworten mischen, damit die richtige nicht immer an derselben Stelle steht
+  if (!d.order){ d.order = d.a.map((_,k)=>k).sort(()=>Math.random()-.5); }
+  $("count").textContent = `Quelle ${i+1} / ${Q.length}`;
+  $("prog").style.width = (i / Q.length * 100) + "%";
+  $("card").innerHTML = `
+    <div class="doc">${d.src}</div>
+    <div class="q">${d.q}</div>
+    <div class="answers">${d.order.map(k=>`<button class="ans" data-k="${k}">${d.a[k]}</button>`).join("")}</div>
+    <div id="fbBox"></div>`;
+  document.querySelectorAll(".ans").forEach(b => b.addEventListener("click", () => answer(+b.dataset.k)));
+  window.scrollTo(0,0);
+}
+
+function answer(k){
+  const d = Q[i], ok = k === d.r;
+  if (ok) points++;
+  document.querySelectorAll(".ans").forEach(b => {
+    const idx = +b.dataset.k;
+    b.disabled = true;
+    if (idx === d.r) b.classList.add("right");
+    else if (idx === k) b.classList.add("wrong");
+    else b.classList.add("dim");
+  });
+  $("fbBox").innerHTML = `
+    <div class="fb ${ok ? "" : "no"}">
+      <strong class="t">${ok ? "Richtig!" : "Nicht ganz."}</strong>
+      ${d.fb}
+      <div class="skill">${d.skill}</div>
+    </div>
+    <button class="btn" id="next">${i < Q.length-1 ? "Nächste Quelle" : "Zur Auswertung"}</button>`;
+  $("prog").style.width = ((i+1) / Q.length * 100) + "%";
+  $("next").addEventListener("click", () => { i++; i < Q.length ? render() : finish(); });
+  $("fbBox").scrollIntoView({behavior:"smooth", block:"start"});
+}
+
+function finish(){
+  $("score").textContent = `${points} / ${Q.length}`;
+  let b, t;
+  if (points >= 7){ b = "🏅 Quellen-Profi"; t = "Du lässt dir nichts vormachen. Damit bringst du die besten Voraussetzungen für Geschichte in der Oberstufe mit, vielleicht sogar für den Leistungskurs?"; }
+  else if (points >= 4){ b = "🔍 Spürnase"; t = "Ein guter Riecher! In der Oberstufe lernst du die Werkzeuge, um jede Quelle sicher zu knacken."; }
+  else { b = "🧭 Entdecker/in"; t = "Genau dafür gibt es Geschichte in der Oberstufe: Hier lernst du, Quellen und Fake News zu durchschauen."; }
+  $("badge").textContent = b; $("badgeText").textContent = t;
+  show("end");
+}
+
+$("go").addEventListener("click", () => { reset(); show("quiz"); render(); });
+$("again").addEventListener("click", () => { reset(); show("quiz"); render(); });
+</script>
+</body>
+</html>
