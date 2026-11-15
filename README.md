@@ -8,5 +8,5 @@ Präsentation „Informatik am GSN“ für den Tag der offenen Tür.
 
 ## Geschichte Oberstufe: Quellencheck
 
-Handy-Quiz mit 9 Quellen und Behauptungen zur Quellenkritik für die Vorstellung von Geschichte in der Oberstufe.
+Handy-Quiz mit 8 Quellen zur Quellenkritik (je 3 Antworten) für die Vorstellung von Geschichte in der Oberstufe.
 Adresse: https://nb-gsn.github.io/tdot/quellencheck/

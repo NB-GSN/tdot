@@ -74,8 +74,8 @@ button{font:inherit;cursor:pointer}
     <div class="doc intro">
       <div class="kind">Dein Auftrag</div>
       <ul style="margin:0;padding-left:20px">
-        <li>9 Quellen und Behauptungen, je eine Frage</li>
-        <li>Dauert ungefähr 6 Minuten</li>
+        <li>8 Quellen vom Mittelalter bis 1989, je eine Frage</li>
+        <li>Dauert ungefähr 5 Minuten</li>
         <li>Prüfe wie in der Oberstufe: Wer spricht? Wann? Mit welcher Absicht? Und was fehlt?</li>
       </ul>
     </div>
@@ -85,7 +85,7 @@ button{font:inherit;cursor:pointer}
 
   <!-- Quiz -->
   <section id="quiz" class="hide">
-    <header class="top"><span id="count">Quelle 1 / 9</span><div class="bar"><i id="prog"></i></div></header>
+    <header class="top"><span id="count">Quelle 1 / 8</span><div class="bar"><i id="prog"></i></div></header>
     <div id="card"></div>
   </section>
 
@@ -144,141 +144,120 @@ const Q = [
   {
     tag: "Quelle oder spätere Deutung?",
     src: `<div class="kind">Behauptung in einem Erklärvideo</div>
-      <blockquote>„Im Mittelalter galt überall das Gesetz ‚Stadtluft macht frei‘: Wer als unfreier Bauer in eine Stadt floh, war sofort frei."</blockquote>`,
-    q: "Was stimmt an dieser Behauptung?",
+      <blockquote>„Im Mittelalter galt das Gesetz ‚Stadtluft macht frei‘: Wer als unfreier Bauer in die Stadt floh, war sofort frei."</blockquote>
+      <div class="who">Ein mittelalterlicher Gesetzestext mit genau diesem Satz ist nicht bekannt.</div>`,
+    q: "Was ist der Satz „Stadtluft macht frei“ also am ehesten?",
     a: [
-      "Eine spätere Zuspitzung: Frei wurde man meist erst nach „Jahr und Tag“ ohne Rückforderung durch den Herrn, und jede Stadt regelte das anders.",
-      "Der Satz ist eine moderne Erfindung ohne mittelalterlichen Hintergrund. Städte waren rechtlich an die Grundherren gebunden und mussten Geflohene immer ausliefern.",
-      "Der Satz stammt wörtlich aus dem Sachsenspiegel (um 1230) und galt deshalb einheitlich in allen Städten des Reiches."
+      "Eine spätere, griffige Zusammenfassung von Historikern, die ein mittelalterliches Prinzip vereinfacht",
+      "Ein mittelalterliches Gesetz, das im ganzen Reich galt, nur ist das Original verloren",
+      "Eine Erfindung aus dem Internet ohne jeden historischen Hintergrund"
     ],
     r: 0,
-    fb: "Die griffige Formel „Stadtluft macht frei“ stammt von Rechtshistorikern des 19. Jahrhunderts. Sie fasst ein Prinzip zusammen, das in vielen Stadtrechten vorkam, aber mit Bedingungen: Meist musste man „Jahr und Tag“ in der Stadt leben, ohne dass der Herr Ansprüche erhob. Eine Darstellung kann also wie eine Quelle klingen.",
+    fb: "Die Formel stammt von Rechtshistorikern des 19. Jahrhunderts. Dahinter steht ein echtes Prinzip vieler Stadtrechte, aber mit Bedingungen: Meist wurde man erst frei, wenn der Herr einen nicht innerhalb von „Jahr und Tag“ zurückforderte. Eine Darstellung kann also klingen wie eine Quelle.",
     skill: "Die <b>Stadt im Spätmittelalter</b> ist Thema in der <b>EF</b>."
-  },
-  {
-    tag: "Gegenquelle",
-    src: `<div class="kind">Erklärung der Menschen- und Bürgerrechte, Paris, 26. August 1789, Artikel 1</div>
-      <blockquote>„Die Menschen werden frei und gleich an Rechten geboren und bleiben es."</blockquote>`,
-    q: "Mit welcher Quelle kannst du am besten zeigen, wo dieser Anspruch an Grenzen stieß?",
-    a: [
-      "Mit dem Bericht eines Pariser Augenzeugen vom Sturm auf die Bastille (Juli 1789)",
-      "Mit der „Erklärung der Rechte der Frau und Bürgerin“ von Olympe de Gouges (1791)",
-      "Mit der Verfassung von 1791, die die Erklärung als Präambel übernahm",
-      "Mit Edmund Burkes „Betrachtungen über die Französische Revolution“ (1790), einer konservativen Kritik"
-    ],
-    r: 1,
-    fb: "Olympe de Gouges schrieb die Erklärung 1791 bewusst um und machte so sichtbar, dass Frauen ausgeschlossen blieben. Auch viele Männer durften nicht wählen: Die Verfassung von 1791 kannte ein Zensuswahlrecht, das „Passivbürger“ ohne genug Steuerleistung ausschloss. Eine Gegenquelle zeigt, was eine Quelle verschweigt.",
-    skill: "Die <b>Französische Revolution</b> ist Thema in der <b>EF</b> (Politische Partizipation und Freiheitsstreben)."
   },
   {
     tag: "Anspruch und Wirklichkeit",
     src: `<div class="kind">Unabhängigkeitserklärung der USA, 4. Juli 1776</div>
       <blockquote>„Wir halten diese Wahrheiten für selbstverständlich: dass alle Menschen gleich geschaffen sind …"</blockquote>
-      <div class="who">Hauptautor: Thomas Jefferson, Plantagenbesitzer in Virginia, der zeitlebens Sklaven besaß</div>`,
-    q: "Wie lässt sich dieser Widerspruch historisch am besten deuten?",
+      <div class="who">Hauptautor: Thomas Jefferson. Er besaß zeitlebens Hunderte Sklaven.</div>`,
+    q: "Was zeigt dieser Widerspruch?",
     a: [
-      "Die Erklärung beendete die Sklaverei 1776 in allen Kolonien, die Südstaaten führten sie aber nach dem Krieg wieder ein.",
-      "Der Satz war ein Ideal, das seine Verfasser nicht einlösten. Gerade darauf konnten sich Gegner der Sklaverei später berufen.",
-      "Der Satz wurde erst nach dem Bürgerkrieg nachträglich in die Erklärung eingefügt.",
-      "Der Satz meinte nur die Gleichheit der Kolonisten mit den Briten. Um Sklaverei ging es in der Debatte von 1776 überhaupt nicht."
+      "Der Satz war gelogen und ist deshalb für Historiker wertlos.",
+      "Das Ideal ging weiter als die Wirklichkeit. Gegner der Sklaverei konnten sich später genau auf diesen Satz berufen.",
+      "Mit „alle Menschen“ waren auch die Sklaven gemeint, die 1776 deshalb frei wurden."
     ],
     r: 1,
-    fb: "Die Sklaverei bestand bis 1865 weiter. Abolitionisten wie Frederick Douglass hielten der Nation ihre eigene Erklärung vor („What to the Slave is the Fourth of July?“, 1852). Ideale wirken oft gerade durch den Abstand zur Wirklichkeit.",
-    skill: "Entstehung der USA und <b>Abolitionismus</b> sind Thema in der <b>EF</b>."
+    fb: "Die Sklaverei bestand in den USA noch bis 1865. Abolitionisten wie Frederick Douglass hielten der Nation ihre eigene Erklärung vor. Ein Ideal kann also auch dann etwas bewirken, wenn seine Verfasser es selbst nicht einlösen.",
+    skill: "Die Entstehung der USA und der <b>Kampf gegen die Sklaverei</b> sind Thema in der <b>EF</b>."
   },
   {
-    tag: "Entstehungskontext und Intention",
+    tag: "Augenzeuge = wahr?",
     src: `<div class="kind">Gemälde</div>
       <p style="margin:0 0 6px"><b>Anton von Werner: „Die Proklamierung des Deutschen Kaiserreiches (18. Januar 1871)“</b>, Fassung von 1885</p>
-      <div class="who">Werner war 1871 als Augenzeuge im Spiegelsaal von Versailles. Die Fassung von 1885 war ein Geschenk des Kaiserhauses zu Bismarcks 70. Geburtstag. Sie zeigt Bismarck in der Bildmitte in strahlend weißer Uniform; am 18. Januar 1871 trug er eine dunkle.</div>`,
-    q: "Wofür ist dieses Bild vor allem eine aussagekräftige Quelle?",
+      <div class="who">Werner war 1871 als Augenzeuge in Versailles dabei. Die Fassung von 1885 war ein Geschenk zu Bismarcks 70. Geburtstag. Sie zeigt Bismarck in der Bildmitte in strahlend weißer Uniform. Am 18. Januar 1871 trug er eine dunkle.</div>`,
+    q: "Was verrät dieses Bild vor allem?",
     a: [
-      "Für den genauen Ablauf am 18. Januar 1871, denn der Maler war Augenzeuge.",
-      "Für das Bild, das man sich 1885 von der Reichsgründung machen sollte: eine Gründung „von oben“ mit Bismarck als Helden.",
-      "Für die Sicht des Malers selbst, denn Künstler malten im Kaiserreich frei nach eigener politischer Überzeugung.",
-      "Für die Machtverhältnisse von 1871, denn das Bild zeigt genau, wer damals neben dem Kaiser die Entscheidungen traf."
+      "Wie es am 18. Januar 1871 genau aussah, denn der Maler war ja dabei.",
+      "Wie man sich die Reichsgründung 1885 vorstellen sollte: mit Bismarck als Helden in der Mitte.",
+      "Gar nichts, denn ein Gemälde ist keine historische Quelle."
     ],
     r: 1,
-    fb: "Augenzeugenschaft macht ein Bild nicht automatisch genau. Die Fassung von 1885 ist ein Auftragswerk: Sie rückt Bismarck in den Mittelpunkt und zeigt fast nur Fürsten und Offiziere, kein Parlament und kein Volk. Sie verrät mehr über die Erinnerungspolitik 1885 als über den Tag selbst.",
+    fb: "Augenzeugenschaft macht ein Bild nicht automatisch genau. Die Fassung von 1885 ist ein Auftragswerk: Sie rückt Bismarck ins Zentrum und zeigt fast nur Fürsten und Offiziere, kein Parlament und kein Volk. Sie verrät mehr über das Jahr 1885 als über den Tag selbst.",
     skill: "Das <b>Kaiserreich</b> ist Thema in der <b>Q-Phase</b>."
+  },
+  {
+    tag: "Wer spricht und warum?",
+    src: `<div class="kind">Aussage vor einem Untersuchungsausschuss des Parlaments, November 1919</div>
+      <blockquote>„Ein englischer General sagte mit Recht: ‚Die deutsche Armee ist von hinten erdolcht worden.‘"</blockquote>
+      <div class="who">Paul von Hindenburg, im Ersten Weltkrieg Chef der Obersten Heeresleitung. Gut zu wissen: Die Heeresleitung hatte im September 1918 selbst erklärt, dass der Krieg verloren sei, und einen Waffenstillstand verlangt.</div>`,
+    q: "Was wollte Hindenburg mit dieser Aussage erreichen?",
+    a: [
+      "Er wollte die Schuld an der Niederlage von der Armeeführung auf die Politiker in der Heimat schieben.",
+      "Er wollte als Fachmann neutral erklären, warum Deutschland den Krieg verloren hatte.",
+      "Er wollte zeigen, dass die Briten Deutschland unfair behandelt hatten."
+    ],
+    r: 0,
+    fb: "Hindenburg trug die militärische Niederlage mit und gab sie hier als Verrat aus. Daraus wurde die „Dolchstoßlegende“: Demokraten und Revolutionäre galten als Schuldige. Das hat die Weimarer Republik schwer belastet. Die Frage „Wer spricht, mit welchem Interesse?“ gehört zu jeder Quelle.",
+    skill: "Die <b>Weimarer Republik</b> ist Thema in der <b>Q-Phase</b>."
   },
   {
     tag: "Quelle oder Darstellung?",
     src: `<div class="kind">Roman</div>
       <p style="margin:0 0 6px"><b>Erich Maria Remarque: „Im Westen nichts Neues“</b>, erschienen 1928/29</p>
-      <div class="who">Remarque war ab 1917 selbst Soldat an der Westfront und wurde verwundet. Der Roman wurde ein Weltbestseller und war heftig umstritten; die Nationalsozialisten verbrannten ihn 1933.</div>`,
-    q: "Wie ordnest du den Roman ein?",
+      <div class="who">Remarque war ab 1917 selbst Soldat an der Westfront. Der Roman wurde ein Weltbestseller und war heftig umstritten; die Nationalsozialisten verbrannten ihn 1933.</div>`,
+    q: "Ist der Roman eine Quelle?",
     a: [
-      "Als Primärquelle, die den Frontalltag 1914–1918 authentisch dokumentiert, weil der Autor dabei war.",
-      "Als literarische Darstellung mit zehn Jahren Abstand und zugleich als Quelle für den Streit um den Krieg in der Weimarer Republik.",
-      "Als Sekundärliteratur, weil Remarque seine Erlebnisse erst zehn Jahre später verarbeitet hat und Historiker Romane grundsätzlich nicht verwenden.",
-      "Als Quelle für den Frontalltag, aber nur, wenn man die Handlung mit Feldpostbriefen abgleicht; für die Zeit nach 1918 sagt der Roman nichts aus."
-    ],
-    r: 1,
-    fb: "Ob etwas Quelle oder Darstellung ist, hängt von deiner Frage ab. Für den Kriegsalltag 1916 ist der Roman eine nachträgliche, literarisch geformte Darstellung. Für die Frage, wie Deutsche Ende der 1920er über den Krieg stritten, ist er eine erstklassige Quelle.",
-    skill: "Erster Weltkrieg und Weimarer Republik sind Thema in der <b>Q-Phase</b>."
-  },
-  {
-    tag: "Intention",
-    src: `<div class="kind">Aussage vor dem Untersuchungsausschuss der Nationalversammlung, 18. November 1919</div>
-      <blockquote>„Ein englischer General sagte mit Recht: ‚Die deutsche Armee ist von hinten erdolcht worden.‘"</blockquote>
-      <div class="who">Paul von Hindenburg, im Krieg Chef der Obersten Heeresleitung (OHL)</div>`,
-    q: "Was ist für die Beurteilung dieser Aussage entscheidend?",
-    a: [
-      "Hindenburg sagte als Zeuge vor einem parlamentarischen Ausschuss aus; das macht seine Deutung der Niederlage besonders belastbar.",
-      "Die OHL hatte selbst Ende September 1918 den Waffenstillstand verlangt. Die Aussage schiebt die Schuld an der Niederlage der Heimat zu.",
-      "Die Aussage ist vor allem deshalb wichtig, weil sie zeigt, dass die Novemberrevolution die Kampfkraft der Front tatsächlich gebrochen hatte.",
-      "Die Aussage beruft sich auf einen Briten, also auf die Sicht des Gegners. Sie ist deshalb besonders objektiv."
-    ],
-    r: 1,
-    fb: "Aus dieser Aussage wurde die „Dolchstoßlegende“, die die Weimarer Republik schwer belastete. Wer spricht, wann und mit welchem Interesse? Hindenburg hatte die militärische Niederlage mitzuverantworten und gab sie hier als Verrat der Heimat aus. Ein offizieller Rahmen macht eine Aussage nicht neutral.",
-    skill: "Das <b>Ende der Weimarer Republik</b> ist Thema in der <b>Q-Phase</b>."
-  },
-  {
-    tag: "Quellenauswahl",
-    src: `<div class="kind">Forschungsfrage</div>
-      <blockquote>Wie dachte die deutsche Bevölkerung im September 1939 wirklich über den Beginn des Zweiten Weltkriegs?</blockquote>`,
-    q: "Welche Quellen helfen dir am meisten weiter?",
-    a: [
-      "Wochenschauen und Zeitungen vom September 1939, weil sie täglich und flächendeckend berichteten",
-      "Hitlers Reichstagsrede vom 1. September 1939 und die Reaktion der Abgeordneten im Protokoll",
-      "Geheime Stimmungsberichte des SD und Berichte der Exil-SPD, miteinander verglichen",
-      "Interviews mit Zeitzeugen aus den 2010er-Jahren, weil sie ohne Zensur erzählen konnten"
+      "Ja, er zeigt den Krieg genau so, wie er war, weil Remarque selbst dabei war.",
+      "Nein, ein Roman ist Fiktion und für Historiker deshalb unbrauchbar.",
+      "Für den Krieg selbst ist er eher eine Darstellung, aber er ist eine Quelle dafür, wie man um 1930 über den Krieg dachte und stritt."
     ],
     r: 2,
-    fb: "Wochenschauen und Reden waren inszenierte Propaganda. Die SD-Berichte waren für die NS-Führung gedacht und durften deshalb Missstimmung melden. Die Exil-SPD hoffte auf Widerstand und berichtete mit dieser Brille. Erst der Vergleich beider zeigt: 1939 herrschte eher gedrückte Stimmung, keine Kriegsbegeisterung wie 1914. Zeitzeugen erinnern sich nach 75 Jahren oft anders.",
-    skill: "<b>Nationalsozialismus und Zweiter Weltkrieg</b> sind Thema in der <b>Q-Phase</b>."
+    fb: "Ob etwas Quelle oder Darstellung ist, hängt von deiner Frage ab. Für den Frontalltag 1917 ist der Roman eine nachträgliche, literarisch gestaltete Darstellung. Für die Frage, wie Deutsche Ende der 1920er-Jahre über den Krieg stritten, ist er eine sehr gute Quelle.",
+    skill: "Der <b>Erste Weltkrieg</b> und seine Folgen sind Thema in der <b>Q-Phase</b>."
   },
   {
-    tag: "Perspektive und Kontext",
-    src: `<div class="kind">Internationale Pressekonferenz, Ost-Berlin, 15. Juni 1961</div>
-      <blockquote>„Niemand hat die Absicht, eine Mauer zu errichten!"</blockquote>
-      <div class="who">Walter Ulbricht, Staats- und Parteichef der DDR. Gefragt hatte eine Journalistin, ob eine Staatsgrenze am Brandenburger Tor errichtet werde. Das Wort „Mauer“ hatte sie nicht benutzt.</div>`,
-    q: "Zwei Monate später begann der Mauerbau. Wie nutzt du diese Quelle am sinnvollsten?",
+    tag: "Was zeigt die Kamera?",
+    src: `<div class="kind">Wochenschau, September 1939</div>
+      <p style="margin:0">Der Film zeigt jubelnde Menschen, die Soldaten Blumen zuwerfen. Wochenschauen liefen vor jedem Kinofilm und wurden vom Propagandaministerium kontrolliert.</p>`,
+    q: "Kannst du daraus schließen, wie die Deutschen 1939 über den Kriegsbeginn dachten?",
     a: [
-      "Als Beweis, dass der Mauerbau ein spontaner Entschluss nach dem 15. Juni war.",
-      "Als Quelle für das öffentliche Auftreten der DDR-Führung. Was tatsächlich geplant war, prüfst du mit internen Akten.",
-      "Als Beleg, dass Ulbricht selbst gegen eine Mauer war und vom Politbüro überstimmt wurde.",
-      "Als Beweis für eine gezielte Täuschung des Westens, da der Bau zu diesem Zeitpunkt nachweislich bis ins Detail geplant war."
+      "Ja, es sind echte Filmaufnahmen, also war die Stimmung begeistert.",
+      "Nein, die Bilder wurden ausgewählt, um Begeisterung zu zeigen. Für die echte Stimmung braucht man andere Quellen.",
+      "Nein, denn 1939 gab es noch keine Filmkameras."
     ],
     r: 1,
-    fb: "Auffällig ist, dass Ulbricht das Wort „Mauer“ von sich aus ins Spiel brachte. Wie weit die Planung im Juni schon war, ist in der Forschung umstritten. Öffentliche Aussagen zeigen, was die Öffentlichkeit glauben sollte. Was geplant war, zeigen eher interne Dokumente.",
+    fb: "Auch echte Aufnahmen können ein falsches Bild ergeben: Was gezeigt wurde, bestimmte das Regime. Geheime Stimmungsberichte für die NS-Führung zeigen etwas anderes. 1939 herrschte eher gedrückte Stimmung, keine Kriegsbegeisterung wie 1914.",
+    skill: "<b>Nationalsozialismus und Zweiter Weltkrieg</b> sind Thema in der <b>Q-Phase</b>. Du lernst, wie Propaganda funktioniert."
+  },
+  {
+    tag: "Aussage und Handeln",
+    src: `<div class="kind">Pressekonferenz, Ost-Berlin, 15. Juni 1961</div>
+      <blockquote>„Niemand hat die Absicht, eine Mauer zu errichten!"</blockquote>
+      <div class="who">Walter Ulbricht, Staats- und Parteichef der DDR. Die Journalistin hatte nach einer „Staatsgrenze“ gefragt, das Wort „Mauer“ benutzte Ulbricht von sich aus. Zwei Monate später, am 13. August 1961, begann der Mauerbau.</div>`,
+    q: "Was kannst du mit dieser Quelle anfangen?",
+    a: [
+      "Nichts, denn sie ist eine Lüge und damit wertlos.",
+      "Sie beweist, dass der Mauerbau ein ganz spontaner Entschluss war.",
+      "Sie zeigt, was die DDR-Führung die Öffentlichkeit glauben lassen wollte. Was sie wirklich plante, muss man mit anderen Quellen prüfen."
+    ],
+    r: 2,
+    fb: "Auch eine falsche Aussage ist eine wertvolle Quelle, nämlich dafür, wie sich die DDR-Führung darstellen wollte. Wie weit die Planung im Juni schon war, ist unter Historikern umstritten. Auffällig bleibt, dass das Wort „Mauer“ von Ulbricht selbst kam.",
     skill: "Das <b>geteilte Deutschland</b> ist Thema in der <b>Q-Phase</b>."
   },
   {
     tag: "Anlass oder Ursache?",
     src: `<div class="kind">Live-Pressekonferenz, Ost-Berlin, 9. November 1989</div>
       <blockquote>„Das tritt nach meiner Kenntnis … ist das sofort, unverzüglich."</blockquote>
-      <div class="who">Günter Schabowski (SED) auf die Frage, ab wann die neue Reiseregelung gilt. Noch in der Nacht öffneten sich die Grenzübergänge.</div>`,
-    q: "Welche Deutung hält einer historischen Prüfung am besten stand?",
+      <div class="who">Günter Schabowski (SED) auf die Frage, ab wann die neue Reiseregelung gilt. Eigentlich sollte sie erst am nächsten Tag gelten. Noch in der Nacht öffneten sich die Grenzübergänge.</div>`,
+    q: "Ist die Mauer also wegen eines Versprechers gefallen?",
     a: [
-      "Der Mauerfall war ein Versehen: Ohne Schabowskis Versprecher gäbe es die DDR vielleicht noch heute.",
-      "Der Versprecher bestimmte nur den Zeitpunkt. Ursachen: Massenflucht über Ungarn, Montagsdemos, Wirtschaftskrise, Gorbatschows Kurs.",
-      "Schabowski handelte bewusst gegen den Willen des Politbüros, um die Grenze zu öffnen und den Machtkampf in der SED für sich zu entscheiden.",
-      "Die Öffnung war mit Bonn abgesprochen; die Pressekonferenz sollte sie nur noch offiziell bekannt geben."
+      "Ja, ohne den Versprecher gäbe es die DDR vielleicht noch heute.",
+      "Der Versprecher bestimmte den Zeitpunkt. Die Ursachen waren Massenflucht, Demonstrationen und die Krise der DDR.",
+      "Nein, die Öffnung war mit der Bundesregierung abgesprochen."
     ],
     r: 1,
-    fb: "Historiker unterscheiden zwischen <b>Anlass</b> und <b>Ursache</b>. Schabowskis Zettel war der Anlass für diese eine Nacht. Ohne den Druck der Friedlichen Revolution und die Krise des Ostblocks hätte er nichts ausgelöst.",
+    fb: "Historiker unterscheiden zwischen <b>Anlass</b> und <b>Ursache</b>. Schabowskis Zettel war der Anlass für diese eine Nacht. Ohne die Friedliche Revolution, die Massenflucht über Ungarn und die wirtschaftliche Krise der DDR hätte er nichts ausgelöst.",
     skill: "Die <b>Friedliche Revolution 1989</b> ist Thema in der <b>Q-Phase</b>."
   }
 ];
@@ -330,7 +309,7 @@ function answer(k){
 function finish(){
   $("score").textContent = `${points} / ${Q.length}`;
   let b, t;
-  if (points >= 8){ b = "🏅 Quellen-Profi"; t = "Du lässt dir nichts vormachen. Damit bringst du die besten Voraussetzungen für Geschichte in der Oberstufe mit, vielleicht sogar für den Leistungskurs?"; }
+  if (points >= 7){ b = "🏅 Quellen-Profi"; t = "Du lässt dir nichts vormachen. Damit bringst du die besten Voraussetzungen für Geschichte in der Oberstufe mit, vielleicht sogar für den Leistungskurs?"; }
   else if (points >= 5){ b = "🔍 Spürnase"; t = "Ein guter Riecher! In der Oberstufe lernst du die Werkzeuge, um jede Quelle sicher zu knacken."; }
   else { b = "🧭 Entdecker/in"; t = "Genau dafür gibt es Geschichte in der Oberstufe: Hier lernst du, Quellen und Fake News zu durchschauen."; }
   $("badge").textContent = b; $("badgeText").textContent = t;
